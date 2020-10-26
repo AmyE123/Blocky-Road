@@ -10,7 +10,7 @@ public class FloorTile : MonoBehaviour
     void OnTriggerExit(Collider other)
     {
         isWalkedOn = true;
-        Debug.Log("WalkedOver");
+        //Debug.Log("WalkedOver");
         //transform.DOPunchScale(Vector3.zero, 2, 10, 1);
         //Destroy(other.gameObject);
     }
