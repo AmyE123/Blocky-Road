@@ -19,10 +19,17 @@ public class PlayerMovement : MonoBehaviour
     float respawnDelay = 0.2f;
     public ButtonCommand button;
 
+    public SoundFX soundFX;
+    public AudioClip buttonClick;
+    public AudioClip deathSound;
+
+    public Transform blockArea1;
+
+
 
     void Start()
     {
-        startPos = player.position;
+        //startPos = player.position;
         foreach(GameObject g in gridTiles)
         {
             g.SetActive(false);
@@ -37,14 +44,15 @@ public class PlayerMovement : MonoBehaviour
             gridTiles[0].SetActive(true);
             gridTiles[1].SetActive(false);
             gridTiles[2].SetActive(false);
-            gridTiles[3].SetActive(false);            
+            gridTiles[3].SetActive(false);    
+                    
         }
         else if(holdMouse.numberSpaces == 2 && isActive)
         {
             gridTiles[0].SetActive(true);
             gridTiles[1].SetActive(true);
             gridTiles[2].SetActive(false);
-            gridTiles[3].SetActive(false);
+            gridTiles[3].SetActive(false); 
         }
         else if(holdMouse.numberSpaces == 3 && isActive)
         {
@@ -65,7 +73,7 @@ public class PlayerMovement : MonoBehaviour
             gridTiles[0].SetActive(false);
             gridTiles[1].SetActive(false);
             gridTiles[2].SetActive(false);
-            gridTiles[3].SetActive(false);
+            gridTiles[3].SetActive(false); 
         }
 
         // switch(holdMouse.numberSpaces)
@@ -129,6 +137,7 @@ public class PlayerMovement : MonoBehaviour
         Debug.Log("trigger");
         if(other.tag == "enemy")
         {
+            soundFX.PlaySound(deathSound);
             Debug.Log("death");
             deathPos = playerPos;
             var deathPosition = Instantiate(playerExplosion, player);
@@ -139,6 +148,13 @@ public class PlayerMovement : MonoBehaviour
         else if(other.tag == "button")
         {
             button.LowerBlockage(); 
+            soundFX.PlaySound(buttonClick);
+        }
+        else if(other.tag == "block")
+        {
+            //playerPos -= Vector3.right; 
+            transform.DOLocalMove(blockArea1.position, speed);
+            playerPos = blockArea1.position;
         }
     }
 

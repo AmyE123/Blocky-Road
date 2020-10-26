@@ -4,5 +4,32 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Prefab/Levels/Level_1.unity
+    guid: c050f6d290eca9740aa8913c02b39d82
+  - enabled: 1
+    path: Assets/Prefab/Levels/Level_2.unity
+    guid: 2e89392019621024ca0bbd398c21d888
+  - enabled: 1
+    path: Assets/Prefab/Levels/Level_3.unity
+    guid: cdb7c90d72d7d4b499518aeb0354e133
+  - enabled: 1
+    path: Assets/Prefab/Levels/Level_4.unity
+    guid: 5401ef20e3a6c8c48ae915c69d476814
+  - enabled: 1
+    path: Assets/Prefab/Levels/Level_5.unity
+    guid: 27fb084da4bdd254c8416a92979d7cc1
+  - enabled: 1
+    path: Assets/Prefab/Levels/Level_6.unity
+    guid: b7d897c5085cc434387d9be852871c53
+  - enabled: 1
+    path: Assets/Prefab/Levels/Level_7.unity
+    guid: 4c4a16eda1d046b4dbed79c112568721
+  - enabled: 1
+    path: Assets/Prefab/Levels/LevelExample.unity
+    guid: 35ce8ea4b4d511d4ebb85b4c61230275
+  - enabled: 1
+    path: Assets/Prefab/Levels/Won.unity
+    guid: c68464262ab7003429ee0771d94b7300
   m_configObjects: {}

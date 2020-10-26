@@ -108,3 +108,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfdd2478c15573f40b101896081b74d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  soundFX: {fileID: 0}
+  winSound: {fileID: 0}
+  winButton: 0
+  nextScene: 

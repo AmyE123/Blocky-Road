@@ -11,6 +11,8 @@ public class HoldMouse : MonoBehaviour
     public UI_Ring ring_UI;
     public PlayerMovement[] players;
     public LevelManager levelManager;
+    public SoundFX soundFX;
+    public AudioClip[] gridSounds;
     
     
     [Header("Data Values")]
@@ -91,6 +93,7 @@ public class HoldMouse : MonoBehaviour
         isCharging = true;
         numberSpaces+= 1;
         clickDelay = 0.5f;
+        soundFX.PlaySound(gridSounds[numberSpaces - 1]);
     }
 
     void OnClick()

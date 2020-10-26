@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8981895345957544014}
+  - component: {fileID: 4544513594350607676}
   m_Layer: 0
   m_Name: BlockedPath
   m_TagString: Untagged
@@ -30,9 +31,23 @@ Transform:
   - {fileID: 3769452435641308435}
   - {fileID: 4097786920090941562}
   - {fileID: 8796699302489153429}
+  - {fileID: 5997220660558599353}
   m_Father: {fileID: 6970548435812775590}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &4544513594350607676
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2087849255430452103}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &4268491249887402708
 GameObject:
   m_ObjectHideFlags: 0
@@ -142,6 +157,36 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockage: {fileID: 2087849255430452103}
+--- !u!1 &4865428428558494041
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5997220660558599353}
+  m_Layer: 0
+  m_Name: Transform
+  m_TagString: block
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5997220660558599353
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4865428428558494041}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1, y: 0, z: -1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8981895345957544014}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6468700798371228383
 GameObject:
   m_ObjectHideFlags: 0
@@ -188,7 +233,7 @@ GameObject:
   - component: {fileID: 5419386161462154060}
   m_Layer: 0
   m_Name: Blockage
-  m_TagString: Untagged
+  m_TagString: block
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -283,7 +328,7 @@ GameObject:
   - component: {fileID: 4735689997675104495}
   m_Layer: 0
   m_Name: Blockage
-  m_TagString: Untagged
+  m_TagString: block
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -378,7 +423,7 @@ GameObject:
   - component: {fileID: 4775485380121242473}
   m_Layer: 0
   m_Name: Blockage
-  m_TagString: Untagged
+  m_TagString: block
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
