@@ -7,7 +7,7 @@ using UnityEngine.ParticleSystemJobs;
 public class PlayerMovement : MonoBehaviour
 {
     public Vector3 playerPos;
-    public float speed = 2.0f;
+    public float speed = 0.5f;
     public float moveDelay = 0.5f;
     public bool isActive = true;
     public GameObject[] gridTiles;
@@ -24,6 +24,7 @@ public class PlayerMovement : MonoBehaviour
     public AudioClip deathSound;
 
     public Transform blockArea1;
+    public bool isHit;
 
 
 
@@ -76,6 +77,18 @@ public class PlayerMovement : MonoBehaviour
             gridTiles[3].SetActive(false); 
         }
 
+        // if(playerCol.tag == "enemy")
+        // {
+        //     isHit = true;
+        // }
+        if(isHit)
+        {
+            player.localPosition = startPos;
+            playerPos = startPos;
+            speed = 0.5f;
+            isHit = false;
+        }
+
         // switch(holdMouse.numberSpaces)
         // {
         //     case 1:
@@ -124,11 +137,13 @@ public class PlayerMovement : MonoBehaviour
         {
             playerPos += Vector3.right * numberOfSpaces; 
             transform.DOLocalMove(playerPos, speed); 
+            //transform.localPosition = playerPos;
         }
         else if(isActive && holdMouse.players[1])
         {
             playerPos += Vector3.left * numberOfSpaces; 
-            transform.DOLocalMove(playerPos, speed); 
+            transform.DOLocalMove(playerPos, speed);
+            //transform.localPosition = playerPos; 
         }
     }
 
@@ -137,6 +152,8 @@ public class PlayerMovement : MonoBehaviour
         Debug.Log("trigger");
         if(other.tag == "enemy")
         {
+            isHit = true;
+            DOTween.Kill(transform); //THIS HELPS A SHIT TON!
             soundFX.PlaySound(deathSound);
             Debug.Log("death");
             deathPos = playerPos;
@@ -154,6 +171,7 @@ public class PlayerMovement : MonoBehaviour
         {
             //playerPos -= Vector3.right; 
             transform.DOLocalMove(blockArea1.position, speed);
+            //transform.position = endblock.position;
             playerPos = blockArea1.position;
         }
     }
@@ -161,10 +179,7 @@ public class PlayerMovement : MonoBehaviour
     void playerTransform()
     {
         player.localPosition = startPos;
-        if(respawnDelay <= 0)
-        {
-            playerPos = startPos;
-            speed = 1f;
-        }
+        playerPos = startPos;
+        speed = 0.5f;
     }
 }

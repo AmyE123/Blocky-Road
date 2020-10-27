@@ -18,7 +18,7 @@ public class HoldMouse : MonoBehaviour
     [Header("Data Values")]
     [Space(20)]
     public int numberSpaces = 0;
-    public float clickDelay = 0.5f;
+    public float clickDelay = 0.25f;
     bool isCharging = false;
     public bool upright = true;
     public float fullChargeDelay = 0.5f;
@@ -66,7 +66,7 @@ public class HoldMouse : MonoBehaviour
         }
         if(Input.GetMouseButtonUp(0))
         {
-            clickDelay = 0.5f;
+            clickDelay = 0.25f;
             if(numberSpaces <= 0)
             {
                 levelManager.FlipMap(upright);
@@ -79,7 +79,7 @@ public class HoldMouse : MonoBehaviour
     {
         ring_UI.FadeOut_Fin();
         isCharging = false;
-        clickDelay = 0.5f;
+        clickDelay = 0.25f;
         //player.PlayerMove(numberSpaces);
         foreach(PlayerMovement p in players)
         {
@@ -92,7 +92,7 @@ public class HoldMouse : MonoBehaviour
         ring_UI.ChargeRing();
         isCharging = true;
         numberSpaces+= 1;
-        clickDelay = 0.5f;
+        clickDelay = 0.25f;
         soundFX.PlaySound(gridSounds[numberSpaces - 1]);
     }
 
@@ -104,7 +104,7 @@ public class HoldMouse : MonoBehaviour
         }
         if(Input.GetMouseButtonUp(0))
         {
-            clickDelay = 0.5f;
+            clickDelay = 0.25f;
         }
     }
 
