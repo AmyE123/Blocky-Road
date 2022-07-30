@@ -143,7 +143,6 @@ public class PlayerMovement : MonoBehaviour
         {
             playerPos += Vector3.left * numberOfSpaces; 
             transform.DOLocalMove(playerPos, speed);
-            //transform.localPosition = playerPos; 
         }
     }
 
@@ -153,7 +152,7 @@ public class PlayerMovement : MonoBehaviour
         if(other.tag == "enemy")
         {
             isHit = true;
-            DOTween.Kill(transform); //THIS HELPS A SHIT TON!
+            DOTween.Kill(transform);
             soundFX.PlaySound(deathSound);
             Debug.Log("death");
             deathPos = playerPos;
