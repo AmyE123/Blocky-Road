@@ -59,6 +59,5 @@ sysinfo.txt
 crashlytics-build.properties
 
 WebGL/
-Assets/FMOD/LD47/.cache/*.*
-/Assets/Plugins/FMOD/Cache/Editor/FMODStudioCache.asset
-/fmod_editor.log
+/ProjectSettings/
+/UserSettings/
